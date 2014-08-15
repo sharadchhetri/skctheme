@@ -1,0 +1,4 @@
+skctheme
+========
+
+skctheme : Wordpress theme
