@@ -1,0 +1,359 @@
+/*
+Theme Name: skctheme
+Theme URI: http://sharad.me
+Description: A clean and simple skctheme from sharad.me
+Author: Sharad Chhetri
+Author URI: http://sharad.me
+Version: 1.0
+*/
+
+body{  
+    font-family: Ubuntu,Helvetica,Georgia,Sans-serif;
+    font-size: 14px;
+    background: #d9d9d9;
+    color: #59453D;
+}
+ 
+a:link, a:visited{
+    text-decoration: none;
+    color: #4083A2;
+}
+ 
+a:hover{
+    color: #5f5f5f;
+}
+ 
+h1 {
+    font-size: 30px;
+}
+h1.entry-title a {
+text-decoration:none;
+color:#4083A2;
+}
+
+h3 {
+    font-size: 22px;
+}
+ 
+h3.h3entry-title {
+text-decoration:none;
+font-size: 15px;
+color:#000000;
+font-family: Arial, italic, Helvetica, Georgia, Sans-serif;
+}
+
+#wrapper{
+    margin: 58px auto;
+    width: 96%;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-radius:0;
+    margin-bottom:11px; 
+}
+
+ 
+/* #header{
+    width: 80%;
+    height: 100px;
+} */
+
+#header {
+        height: auto;
+	background: #FFFFFF;
+/*	border-bottom: double 3px #aba;
+	border-left: solid 1px #9a9;
+	border-right: solid 1px #565;
+	border-top: solid 1px #9a9; */
+	font: italic normal 230% 'Times New Roman', Times, serif;
+	letter-spacing: 0.2em;
+	margin: 0;
+	padding: 10px;
+/*	border-top-left-radius:1em;
+	border-top-right-radius:1em;
+	border-color:#474747; */
+}
+ 
+#blog{
+    float: left;
+    width: 70%;
+    padding: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+    font-family: Ubuntu, sans-serif;;
+}
+ 
+.widget {
+    border-bottom: double;
+    border-color: grey;
+    border-width: 3px;
+    margin: 10px;
+    width: 90%;
+}
+
+.widgettitle {
+text-align: center;
+}
+
+.widget_archive {
+text-align: center;
+padding: 0px;
+}
+
+
+h2.widgettitle {
+color: grey;
+}
+
+.sidebar{
+    float: right;
+    width: 26%;
+    margin-top: 10px;
+    margin-right: 0;
+    font-size: 14px;
+    list-style: none;
+    border-style: solid;
+    border-color: white;
+    border-width:1px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.post {
+padding: 1px;
+}
+
+#footer{
+    clear: both;
+    text-align: center;
+    height: 50px;
+    background: whitesmoke;
+    padding: 20px;
+    border-style: solid;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+}
+
+#navigation {
+float:left;
+width:100%;
+background: black;
+/* background: #600; */
+/* background: -moz-linear-gradient( top, #600, #300);*/ /* CSS 3 */
+font: 1.0em "Segoe UI", "Lucida Grande", Verdana, Arial, sans-serif;
+border-top:1px solid #FFFFFF;
+border-bottom:2px solid #000;
+}
+
+
+/* The container wrapping ul.dropdown */
+#navwrap {
+float:left;
+width:100%;
+background: #2AA4CF;
+/* background: #600; */
+/* background: -moz-linear-gradient( top, #600, #300);*/ /* CSS 3 */ 
+font: 1.0em "Segoe UI", "Lucida Grande", Verdana, Arial, sans-serif;
+border-top:1px solid #FFFFFF; 
+border-bottom:2px solid whitesmoke;
+border-radius:0px;
+/*** below 5 lines added for top bar **/
+left: 0;
+position: fixed;
+top: 0;
+padding-left:2%;
+z-index: 9999;
+}
+ 
+/* Top level Unordered list */
+ul.dropdown {
+list-style:none;
+float:left;
+width:100%;
+padding: 0 10px;
+}
+ 
+ul.dropdown  li{
+float:left; /* makes horiz list */
+position:relative; /* hey Submenu ULs, appear below! */
+}
+ 
+ul.dropdown a {
+padding:12px; /*space the items, occupy entire height too.*/
+color:#FFFFFF;
+text-decoration:none;
+text-shadow:0 1px 0 #000;
+}
+ 
+/* Style the link hover */
+ul.dropdown li:hover a {
+background:#000000;
+/*border-top:1px solid #FFFFFF;
+border-bottom: 1px solid #000;
+border-right:1px solid #FFFFFF; */
+}
+ 
+/* Displays the link as blocks. */
+ul.dropdown li ul a {
+display:block;
+}
+ 
+/* sub menus!!  */
+ 
+ul.dropdown ul {
+list-style: none;
+margin:0; /* Appear just below the hovering list */
+padding:0;
+width:200px; /* specify the width. */
+position:absolute; /* needed */
+z-index:500; /* specify the order */
+}
+ 
+ul.dropdown li ul {
+top:27px; /* Positioning:Calc with top level horz list height */
+-moz-box-shadow:0 2px 10px #000; /* CSS 3 */
+}
+ 
+ul.dropdown ul ul {
+top:0;
+left:100%; /* Position the sub menus to right. */
+}
+ 
+ul.dropdown ul li {
+float:none; /* umm.. Appear below the previous one. mmkay? */
+}
+ 
+/* Drop Down! */
+ 
+/* Hide all the dropdowns (submenus) */
+ul.dropdown ul,
+ul.dropdown li:hover ul ul,
+ul.dropdown ul li:hover ul ul
+{ display: none; }
+ 
+/* Display the submenus only when li are hovered */
+ul.dropdown li:hover ul,
+ul.dropdown ul li:hover ul ,
+ul.dropdown ul li ul li:hover ul
+{ display: block;}
+ 
+ul.dropdown li * a:hover {
+/* Change color of links when hovered */
+background: #000000;
+border-bottom:1px solid #FFFFFF;
+border-top:1px solid #222;
+}
+
+img {
+max-width: 90%;
+height: auto;
+border-style:none;
+border-radius: 10px;
+border-width:1px;
+margin-left: 5%;
+margin-right: 5%;
+ }
+ 
+
+.featuredimage {
+float:left;
+width: 150px;
+height: auto;
+}
+ 
+blockquote {
+  margin-bottom: 1.5em;
+  padding: 1.6em 1.6em 1px;
+  padding: 1.6em 1.6em 0.1rem;
+  background: #eee;
+  border-left: 2px solid #6d97b7;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/*comment thread */
+ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+ol.commentlist li { }
+ol.commentlist li.alt { }
+ol.commentlist li.bypostauthor {}
+ol.commentlist li.byuser {}
+ol.commentlist li.comment-author-admin {}
+ol.commentlist li.comment { border-bottom:1px dotted #666; padding:1em; }
+ol.commentlist li.comment div.comment-author {}
+ol.commentlist li.comment div.vcard { font:normal 16px georgia,times,serif; }
+ol.commentlist li.comment div.vcard cite.fn { font-style:normal; }
+ol.commentlist li.comment div.vcard cite.fn a.url {}
+ol.commentlist li.comment div.vcard img.avatar { border:5px solid #ccc; float:right; margin:0 0 1em 1em; }
+ol.commentlist li.comment div.vcard img.avatar-32 {}
+ol.commentlist li.comment div.vcard img.photo {}
+ol.commentlist li.comment div.vcard span.says {}
+ol.commentlist li.comment div.commentmetadata {}
+ol.commentlist li.comment div.comment-meta { font-size:9px; }
+ol.commentlist li.comment div.comment-meta a { color:#ccc; }
+ol.commentlist li.comment p { font-size:11px; margin:0 0 1em; }
+ol.commentlist li.comment ul { font-size:11px; list-style:square; margin:0 0 1em 2em; }
+ol.commentlist li.comment div.reply { font-size:11px; }
+ol.commentlist li.comment div.reply a { font-weight:bold; }
+ol.commentlist li.comment ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
+ol.commentlist li.comment ul.children li {}
+ol.commentlist li.comment ul.children li.alt {}
+ol.commentlist li.comment ul.children li.bypostauthor {}
+ol.commentlist li.comment ul.children li.byuser {}
+ol.commentlist li.comment ul.children li.comment {}
+ol.commentlist li.comment ul.children li.comment-author-admin {}
+ol.commentlist li.comment ul.children li.depth-2 { border-left:5px solid #555; margin:0 0 .25em .25em; }
+ol.commentlist li.comment ul.children li.depth-3 { border-left:5px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li.comment ul.children li.depth-4 { border-left:5px solid #bbb; margin:0 0 .25em .25em; }
+ol.commentlist li.comment ul.children li.depth-5 {}
+ol.commentlist li.comment ul.children li.odd {}
+ol.commentlist li.even { background:#fff; }
+ol.commentlist li.odd { background:#f6f6f6; }
+ol.commentlist li.parent { border-left:5px solid #111; }
+ol.commentlist li.thread-alt { }
+ol.commentlist li.thread-even {}
+ol.commentlist li.thread-odd {}
+/*  comment form*/
+
+
+#respond { 
+background: #ececec;
+padding:0 5px 0 5px;
+}
+
+/* Highlight active form field */
+
+#respond input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+ 
+#respond input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+
+#mycolor {background: none repeat scroll 0 0 #0074A2;
+border-left: 4px solid #4D6F9E;
+color: #FFFFFF;
+float: left;
+font: 14px Rokkitt,Georgia,Arial,Helvetica,sans-serif;
+margin: 0 10px 0 0;
+padding: 5px 10px 4px;
+text-transform: uppercase;
+white-space: nowrap;
+}
+

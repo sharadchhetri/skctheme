@@ -1,0 +1,103 @@
+<?php
+ 
+// Create a function for register_nav_menus()
+function add_wp3menu_support() {
+ 
+register_nav_menus(
+        array(
+        'main-menu' => __('Main Navigation'),
+        //'another-menu' => __('Another Navigation')
+        )
+     );
+ 
+}
+ 
+//Add the above function to init hook.
+ 
+add_action('init', 'add_wp3menu_support');
+
+
+// Enable post thumbnails
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size(520, 250, true);
+ 
+Some simple code for our widget-enabled sidebar
+if ( function_exists('register_sidebar') )
+    register_sidebars();
+
+//Code for custom background support
+//add_custom_background();
+//add_theme_support( 'custom-background' );
+$defaults = array(
+	'default-color'          => '',
+	'default-image'          => '',
+	'wp-head-callback'       => '_custom_background_cb',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => ''
+);
+add_theme_support( 'custom-background', $defaults );
+
+
+
+// Add custom header support
+//add_theme_support( 'custom-header' );
+//$defaults = array(
+//	'default-image'          => '',
+//	'random-default'         => false,
+//	'width'                  => 0,
+//	'height'                 => 0,
+//	'flex-height'            => false,
+//	'flex-width'             => false,
+//	'default-text-color'     => '',
+//	'header-text'            => true,
+//	'uploads'                => true,
+//	'wp-head-callback'       => '',
+//	'admin-head-callback'    => '',
+//	'admin-preview-callback' => '',
+// );
+//add_theme_support( 'custom-header', $defaults );
+
+
+
+//Enable post and comments RSS feed links to head
+add_theme_support( 'automatic-feed-links' );
+
+//Enable multisite feature
+define('WP_ALLOW_MULTISITE', true); 
+
+// excerpt
+function new_excerpt_more( $more ) {
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+//comments
+
+function custom_comment($comment, $args, $depth) {
+  $GLOBALS['comment'] = $comment; ?>
+  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID()
+  ?>">
+    <div id="comment-<?php comment_ID(); ?>" class="comment-body">
+      <?php comment_text() ?>
+    </div>
+    <div class="comment-author vcard">
+      <?php printf(__('<cite class="fn">%s</cite>'),
+      get_comment_author_link()) ?>
+      <div class="reply">
+        <?php comment_reply_link(array_merge( $args, array('depth'
+        => $depth, 'max_depth' => $args['max_depth']))) ?>
+      </div>
+      <div class="comment-meta commentmetadata">
+        <a href="<?php echo htmlspecialchars( get_comment_link(
+        $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at
+        %2$s'), get_comment_date(),  get_comment_time()) ?></a>
+        <?php edit_comment_link(__('(Edit)'),'  ','') ?>
+      </div>
+    </div>
+    <?php if ($comment->comment_approved == '0') : ?>
+       <em><?php _e('Your comment is awaiting moderation.') ?></em>
+       <br />
+    <?php endif; ?>
+<?php
+}
+?>
